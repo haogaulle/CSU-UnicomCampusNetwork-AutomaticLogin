@@ -1,6 +1,10 @@
+import json
+fp = open("./func/config.json")
+dic = json.load(fp)
 # 用户名和密码配置
-username = "028206200718"
-password = "123456"
+username = dic['username']
+password = dic['password']
+fp.close()
 
 # 连通性检测域名
 testUrl = "https://www.baidu.com/"

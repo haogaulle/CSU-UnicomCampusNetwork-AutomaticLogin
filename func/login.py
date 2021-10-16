@@ -15,8 +15,16 @@ def logout_(tempHeaders):
 def login_(tempData, tempHeaders, root):
     time.sleep(1.5)
     if not logout_(tempHeaders=tempHeaders):
-        root.event_generate("<<wrongEvent>>")
-        return
+        flag = True
+        try:
+            requests.get(url=settings.testUrl, timeout=2)
+        except requests.exceptions.ReadTimeout:
+            flag = False
+            root.event_generate("<<wrongEvent>>")
+            return
+        if flag:
+            root.event_generate("<<sucEvent>>")
+            return
     response = requests.post(url=settings.loginUrl, data=tempData, headers=tempHeaders)
     flag = True
     if response.status_code == 200:

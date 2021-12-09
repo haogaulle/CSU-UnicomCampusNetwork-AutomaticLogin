@@ -1,0 +1,5 @@
+/func/__pycache__/
+*.exe
+/.idea/
+/bin/
+/release/

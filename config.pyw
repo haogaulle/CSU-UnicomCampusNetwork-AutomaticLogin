@@ -70,12 +70,4 @@ class Window:
 
 if __name__ == '__main__':
     top = Window()
-    # print(top.username_bar.winfo_width()) 224
-    # print(top.username_bar.winfo_height()) 25
-    # print(top.label_1.winfo_width()) 44
-    # print(top.label_1.winfo_height()) 25
-    # print(top.label_0.winfo_width()) 106
-    # print(top.label_0.winfo_height()) 39
-    # print(top.btn.winfo_width()) 110
-    # print(top.btn.winfo_height()) 33
     top.show()
